@@ -35,12 +35,37 @@ void addToTail(int data) {
     iter->next = temp;
 }
 
+void deleteNode(int data){
+	if(head==NULL)return;
+	//if we want to delete head data
+	if(head->data==data){
+		struct Node* temp = head;
+		head=head->next;
+		free(temp);
+		return;
+		
+	}
+	struct Node* temp = head;
+    while (temp->next != NULL && temp->next->data != data) {
+        temp = temp->next;
+    }
+
+    if (temp->next != NULL) {
+        struct Node* iter = temp->next;
+        temp->next = temp->next->next;
+        free(iter);
+    }	
+	
+}
 
 int main() {
     addToHead(10);
     addToHead(20);
     addToTail(30);
     addToTail(40);
+    deleteNode(10);
+    deleteNode(40);
+    
   
 
     return 0;
