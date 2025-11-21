@@ -16,7 +16,6 @@ void addToHead(int data) {
     newNode->next = head;
     head = newNode;
 }
-
 void addToTail(int data) {
     struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
     temp->data = data;
@@ -34,7 +33,6 @@ void addToTail(int data) {
 
     iter->next = temp;
 }
-
 void deleteNode(int data){
 	if(head==NULL)return;
 	//if we want to delete head data
@@ -57,6 +55,18 @@ void deleteNode(int data){
     }	
 	
 }
+void printList() {
+	//we need to see list so we write this function
+    struct Node* temp = head;
+
+    printf("List: ");
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
 
 int main() {
     addToHead(10);
@@ -65,7 +75,7 @@ int main() {
     addToTail(40);
     deleteNode(10);
     deleteNode(40);
-    
+    printList();
   
 
     return 0;
