@@ -60,4 +60,4 @@ To run this project locally, you will need a C compiler (like GCC).
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/REPO_NAME.git](https://github.com/YOUR_USERNAME/REPO_NAME.git)
+   git clone https://github.com/MehmetDr/Data-Structures-in-C.git
